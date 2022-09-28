@@ -1,5 +1,6 @@
 # Default ignored files
 city-register/target/
+register-office/target/
 network-tcp/target/
 network-tcp/api/target/
 network-tcp/client/target/
