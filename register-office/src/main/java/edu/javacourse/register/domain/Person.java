@@ -1,22 +1,37 @@
 package edu.javacourse.register.domain;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
-
-public class Person {
-    private Long id;
+@Table(name = "ro_person")
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "sex", discriminatorType = DiscriminatorType.INTEGER)
+public abstract class Person
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id")
+    private Long personId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "patronymic")
     private String patronymic;
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY,
+            mappedBy = "person")
     private List<Passport> passports;
 
-    public Long getId() {
-        return id;
+    public Long getPersonId() {
+        return personId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPersonId(Long personId) {
+        this.personId = personId;
     }
 
     public String getFirstName() {

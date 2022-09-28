@@ -1,9 +1,17 @@
 package edu.javacourse.register.domain;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 
+@Entity
+@DiscriminatorValue("2")
 public class PersonMale extends Person {
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY,
+            mappedBy = "person")
     private List<MarriageCertificate> marriageCertificates;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY,
+            mappedBy = "person")
     private List<BirthCertificate> birthCertificates;
 
     public List<MarriageCertificate> getMarriageCertificates() {
