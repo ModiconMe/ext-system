@@ -9,11 +9,11 @@ import java.time.LocalDate;
 public class MarriageCertificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "certificate_id")
+    @Column(name = "marriage_certificate_id")
     private Long certificateId;
-    @Column(name = "number")
+    @Column(name = "number_certificate")
     private String number;
-    @Column(name = "issue_date")
+    @Column(name = "date_issue")
     private LocalDate issueDate;
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "husband_id")

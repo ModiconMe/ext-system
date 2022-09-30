@@ -23,7 +23,7 @@ public class Passport {
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id")
     private Person person;
-    @Column(name = "series")
+    @Column(name = "seria")
     private String series;
     @Column(name = "number")
     private String number;

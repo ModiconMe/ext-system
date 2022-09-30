@@ -10,10 +10,10 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("2")
 public class PersonMale extends Person {
     @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY,
-            mappedBy = "person")
+            mappedBy = "husband")
     private List<MarriageCertificate> marriageCertificates;
     @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY,
-            mappedBy = "person")
+            mappedBy = "father")
     private List<BirthCertificate> birthCertificates;
 
     public List<MarriageCertificate> getMarriageCertificates() {
