@@ -1,7 +1,6 @@
 package edu.javacourse.register.domain;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "ro_marriage_certificate")
@@ -19,7 +18,7 @@ public class MarriageCertificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "marriage_certificate_id")
-    private Long certificateId;
+    private long certificateId;
     @Column(name = "number_certificate")
     private String number;
     @Column(name = "date_issue")
@@ -35,11 +34,11 @@ public class MarriageCertificate {
     @Column(name = "end_date")
     private LocalDate endDate;
 
-    public Long getCertificateId() {
+    public long getCertificateId() {
         return certificateId;
     }
 
-    public void setCertificateId(Long certificateId) {
+    public void setCertificateId(long certificateId) {
         this.certificateId = certificateId;
     }
 

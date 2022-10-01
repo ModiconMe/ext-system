@@ -6,8 +6,6 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
-
 public class MarriageControllerTest {
 
     @Test
@@ -25,13 +23,13 @@ public class MarriageControllerTest {
         request.setHusbandSurname("Васильева");
         request.setHusbandGivenName("Елена");
         request.setHusbandPatronymic("Сергеевна");
-        request.setHusbandDateOfBirth(LocalDate.of(1998,03,24));
+        request.setHusbandDateOfBirth(LocalDate.of(1998,3,24));
         request.setHusbandPassportSeries("40000");
         request.setHusbandPassportNumber("123456");
         request.setHusbandPassportIssueDate("2018-04-10");
 
-        request.setMarriageCertificateNumber("123 Marriag");
-        request.setMarriageCertificateDate(LocalDate.of(2018,1,01));
+        request.setMarriageCertificateNumber("123 Marriage");
+        request.setMarriageCertificateDate(LocalDate.of(2018,1,1));
 
         MarriageResponse response = controller.findMarriageCertificate(request);
 
