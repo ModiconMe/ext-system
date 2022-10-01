@@ -1,7 +1,6 @@
 package edu.javacourse.register.domain;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "ro_marriage_certificate")

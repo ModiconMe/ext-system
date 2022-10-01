@@ -1,10 +1,7 @@
 package edu.javacourse.register.domain;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.List;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("1")
