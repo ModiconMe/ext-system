@@ -34,5 +34,6 @@ public class Starter {
 
 //        System.out.println(controller.findMarriageCertificate(new MarriageRequest()).isExist());
         System.out.println(controller.findMarriageCertificate(request).isExist());
+        System.out.println(controller.findMarriageCertificate(new MarriageRequest()).isExist());
     }
 }
