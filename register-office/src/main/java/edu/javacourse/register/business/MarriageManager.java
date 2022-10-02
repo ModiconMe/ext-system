@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 @Service("marriageService")
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class MarriageManager {
@@ -17,10 +19,12 @@ public class MarriageManager {
     @Autowired
     private MarriageDAO marriageDAO;
 
+    @Transactional
     public MarriageResponse findMarriageCertificate(MarriageRequest request) throws Exception {
         LOGGER.info("MarriageManager.findMarriageCertificate called");
         MarriageCertificate marriageCertificate = marriageDAO.findMarriageCertificate(request);
         MarriageResponse response = new MarriageResponse();
+
         if (marriageCertificate.isActive()) {
             response.setExist(true);
             System.out.println(marriageCertificate.getNumber());

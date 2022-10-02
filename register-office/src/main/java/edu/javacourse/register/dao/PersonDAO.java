@@ -3,6 +3,7 @@ package edu.javacourse.register.dao;
 import edu.javacourse.register.domain.Person;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
@@ -24,6 +25,8 @@ public class PersonDAO {
     }
 
     public Long addPerson(Person person) {
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
         entityManager.persist(person);
         entityManager.flush();
         return person.getPersonId();
