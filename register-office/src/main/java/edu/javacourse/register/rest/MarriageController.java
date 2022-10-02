@@ -17,8 +17,7 @@ public class MarriageController {
 
     public MarriageResponse findMarriageCertificate(MarriageRequest request) {
         LOGGER.info("findMarriageCertificate called");
-        MarriageResponse response = null;
-        System.out.println(request);
+        MarriageResponse response;
         try {
             response = marriageManager.findMarriageCertificate((request));
         } catch (Exception e) {

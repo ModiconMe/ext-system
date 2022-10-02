@@ -3,14 +3,12 @@ package edu.javacourse.register.dao;
 import edu.javacourse.register.domain.Person;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
 public class PersonDAO {
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -23,5 +21,11 @@ public class PersonDAO {
         Query namedQuery = entityManager.createNamedQuery("Person.findPersons");
         namedQuery.setParameter("personId", 1);
         return namedQuery.getResultList();
+    }
+
+    public Long addPerson(Person person) {
+        entityManager.persist(person);
+        entityManager.flush();
+        return person.getPersonId();
     }
 }
