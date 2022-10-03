@@ -1,13 +1,12 @@
 package edu.javacourse.register.dao;
 
 import edu.javacourse.register.domain.Person;
+import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.List;
 
+@Service
 public class PersonDAO {
 
     @PersistenceContext
@@ -20,13 +19,10 @@ public class PersonDAO {
 
     public List<Person> findPerson() {
         Query namedQuery = entityManager.createNamedQuery("Person.findPersons");
-        namedQuery.setParameter("personId", 1);
         return namedQuery.getResultList();
     }
 
     public Long addPerson(Person person) {
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
         entityManager.persist(person);
         entityManager.flush();
         return person.getPersonId();

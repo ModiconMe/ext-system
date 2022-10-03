@@ -4,8 +4,11 @@ import edu.javacourse.register.domain.MarriageCertificate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface MarriageDAO extends JpaRepository<MarriageCertificate, Long> {
+    List<MarriageCertificate> findByNumber(String number);
 //    private final static Logger LOGGER = Logger.getLogger(MarriageDAO.class);
 //    @PersistenceContext
 //    private EntityManager entityManager;

@@ -63,5 +63,5 @@ VALUES (1, '40000', '123456', '2018-04-10', 'Department Passport'), (2, '50000',
 INSERT INTO ro_birth_certificate (number_certificate, date_issue, person_id,
 mother_id, father_id) VALUES ('123 Birth', '2018-1-01', 3, 1, 2);
 
-INSERT INTO ro_marriage_certificate (number_certificate, date_issue, husband_id,
-wife_id, active, end_date) VALUES ('123 Marriage', '2018-1-01', 1, 2, true, null);
+--INSERT INTO ro_marriage_certificate (number_certificate, date_issue, husband_id,
+--wife_id, active, end_date) VALUES ('123 Marriage', '2018-1-01', 1, 2, true, null);
